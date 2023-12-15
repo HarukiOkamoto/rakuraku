@@ -35,8 +35,7 @@
 }
 
 .sub-title h2 {
-    font-size: 25px;
-    letter-spacing: .1em;
+    font-size: 30px;
 }
 
 .sub-title span {

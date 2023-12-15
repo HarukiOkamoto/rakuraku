@@ -14,7 +14,7 @@ onBeforeUnmount(() => {
 });
 </script>
 <template>
-    <div :class="{ 'header-area': true, 'fixed': isFixed }">
+    <div class="header-area">
         <nav class="nav">
             <ul>
                 <NuxtLink :to="{ name: 'index' }" class="N-link">
@@ -66,13 +66,8 @@ onBeforeUnmount(() => {
     width: 100%;
     padding-top: 15px;
     background-color: #FFF;
-}
-
-.fixed {
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
     z-index: 1000;
 }
 

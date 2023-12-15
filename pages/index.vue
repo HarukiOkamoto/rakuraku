@@ -1,5 +1,6 @@
 <template>
     <div class="content">
+        <Intro />
         <div class="inner-line">
             <div class="main-title">
                 <h1>らくらく弁当が<span>できる</span>まで♪</h1>
@@ -8,7 +9,9 @@
             <Content2 />
             <Content3 />
         </div>
-
+    </div>
+    <div class="button-area">
+        <button>メニューをみる</button>
     </div>
 </template>
 
@@ -17,7 +20,7 @@
     width: 100%;
     height: auto;
     background-color: #FFF496;
-    padding-top: 10vh;
+    padding-top: 5vh;
     padding-bottom: 10vh;
 }
 
@@ -36,7 +39,7 @@
 }
 
 .main-title h1 {
-    font-size: 30px;
+    font-size: 40px;
 }
 
 span {

@@ -2,7 +2,7 @@
     <div class="intro-content">
         <div class="sub-title">
             <h2 class="index">3.</h2>
-            <h2>皆さんの<span>もと</span>へ</h2>
+            <h2>皆さんの<span>もと</span>へ!!</h2>
         </div>
         <div class="content-area">
             <div class="intro-text">
@@ -35,8 +35,7 @@
 }
 
 .sub-title h2 {
-    font-size: 25px;
-    letter-spacing: .1em;
+    font-size: 30px;
 }
 
 .sub-title span {
