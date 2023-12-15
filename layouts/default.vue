@@ -1,5 +1,20 @@
+<script setup lang="ts">
+const isFixed = ref(false);
+
+const handleScroll = () => {
+    isFixed.value = window.scrollY > 0; // 100pxを超えたら固定
+};
+
+onMounted(() => {
+    window.addEventListener('scroll', handleScroll);
+});
+
+onBeforeUnmount(() => {
+    window.removeEventListener('scroll', handleScroll);
+});
+</script>
 <template>
-    <div class="header-area">
+    <div :class="{ 'header-area': true, 'fixed': isFixed }">
         <nav class="nav">
             <ul>
                 <NuxtLink :to="{ name: 'index' }" class="N-link">
@@ -50,6 +65,15 @@
 .header-area {
     width: 100%;
     padding-top: 15px;
+    background-color: #FFF;
+}
+
+.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
 }
 
 .nav {
@@ -83,7 +107,7 @@
 
 span {
     font-family: Inter;
-    font-weight: 800;
+    font-weight: bold;
     padding-left: 5px;
     font-size: 16px;
 }
@@ -98,6 +122,6 @@ svg {
 }
 
 .active-link {
-    border-bottom: 3px solid #464646;
+    border-bottom: 3px solid #FB710E;
 }
 </style>
