@@ -1,9 +1,10 @@
 <template>
-    <div class="">
-
-    </div>
+    <p>index page</p>
 </template>
 
-<style>
-body {}
+<style scoped>
+p {
+    background-color: rgb(255, 0, 0);
+}
 </style>
+
