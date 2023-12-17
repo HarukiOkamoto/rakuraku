@@ -1,5 +1,6 @@
 <script setup lang="ts">
 const isModalOpen = ref(false);
+const isVisible = ref(false);
 
 const openModal = () => {
     isModalOpen.value = true;
@@ -8,24 +9,35 @@ const openModal = () => {
 const closeModal = () => {
     isModalOpen.value = false;
 }
+
+onMounted(() => {
+    const observer = new IntersectionObserver(
+        ([entry]) => {
+            isVisible.value = entry.isIntersecting;
+        },
+        {
+            threshold: 0.1, // adjust this value to control when the observer triggers
+        }
+    );
+
+    observer.observe(document.querySelector('.intro-area'));
+});
 </script>
+
 <template>
-    <div class="intro-area">
-        <div class="intro-title">
-            <h1>らくらく<span>弁当</span>とは...？</h1>
+    <div class="intro-area" :class="{ 'fade-in': isVisible }">
+        <div class="intro-title fade-in" style="--delay: 0s;">
+            <h1>地域に愛される、らくらく<span>弁当</span>。</h1>
         </div>
-        <div class="intro-movie">
+        <div class="intro-movie fade-in" style="--delay: 1s;">
             <button @click="isModalOpen = true"><img src="@/assets/images/thumb.jpg" alt=""></button>
             <Modal v-if="isModalOpen" @close="closeModal"></Modal>
-            <div class=" intro-textarea">
-                <div class="text-content">
-                    <p>埼玉県蕨市にある、就労継続支援B型(障がいのある方が就労訓練を行える事業所)の宅配弁当!!
-                        すべて手作業で美味しいお弁当作りをしています。
-                        手作りの割りばし袋や、かわいらしいお弁当包みで地域の皆さんに愛されています。地域の密着取材<a href="https://www.youtube.com/@catvwink"
-                            target="_blank">(蕨市ケーブルテレビ
-                            ウインクチャンネル)</a>
-                        が取材に来てくれました！</p>
-                </div>
+        </div>
+        <div class="intro-textarea fade-in" style="--delay: 2s;">
+            <div class="text-content">
+                <p>埼玉県蕨市にある、就労継続支援B型(障がいのある方が就労訓練を行える事業所)の宅配弁当!!
+                    すべて手作業で美味しいお弁当作りをしています。手作りの割りばし袋や、かわいらしいお弁当包みで地域の皆さんに愛されています。地域の密着取材<a
+                        href="https://www.youtube.com/@catvwink" target="_blank">(蕨市ケーブルテレビウインクチャンネル)</a>が取材に来てくれました！</p>
             </div>
         </div>
     </div>
@@ -35,30 +47,34 @@ const closeModal = () => {
 .intro-area {
     width: 100%;
     background-color: #fff;
-    margin: 15vh auto 15vh auto;
-    padding-bottom: 5vh;
+    margin: 0 auto;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    padding-top: 10vh;
 }
 
 .intro-title {
     text-align: center;
-    padding: 10vh;
+    padding-top: 5vh;
+    padding-bottom: 2vh;
 }
 
 .intro-title h1 {
-    animation: sway 2s infinite ease-in-out;
     font-size: 40px;
-    font-family: "Noto Sans JP";
+    font-family: 'Zen Old Mincho';
     font-weight: bold;
+    color: rgb(60, 60, 60);
+    ;
 }
 
 .intro-movie {
     text-align: center;
+    position: relative;
+    padding-top: 5vh;
 }
 
 .intro-movie img {
     margin: 0 auto;
-    max-width: 800px;
+    width: 700px;
     height: auto;
     transition: transform .6s ease;
 }
@@ -68,7 +84,7 @@ const closeModal = () => {
 }
 
 .intro-textarea {
-    width: 60%;
+    width: 1000px;
     padding: 10vh;
     margin: 0 auto;
 }
@@ -78,26 +94,26 @@ const closeModal = () => {
 }
 
 .text-content p {
-    font-size: 18px;
+    font-size: 20px;
+    color: rgb(60, 60, 60);
     font-family: "Noto Sans JP";
-    font-weight: bold;
+    font-weight: 600;
 }
 
 span {
     color: #FB710E;
 }
 
-@keyframes sway {
-    0% {
-        transform: translateX(0);
-    }
 
-    50% {
-        transform: translateX(-5px);
-    }
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+    animation-delay: var(--delay);
+}
 
-    100% {
-        transform: translateX(0);
+@keyframes fadeIn {
+    to {
+        opacity: 1;
     }
 }
 </style>

@@ -1,18 +1,3 @@
-<script setup lang="ts">
-const isFixed = ref(false);
-
-const handleScroll = () => {
-    isFixed.value = window.scrollY > 0; // 100pxを超えたら固定
-};
-
-onMounted(() => {
-    window.addEventListener('scroll', handleScroll);
-});
-
-onBeforeUnmount(() => {
-    window.removeEventListener('scroll', handleScroll);
-});
-</script>
 <template>
     <div class="header-area">
         <nav class="nav">
