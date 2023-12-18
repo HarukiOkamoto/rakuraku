@@ -1,11 +1,9 @@
-
-import type content1Vue from './Contents/content1.vue';
 <template>
     <div class="contents-area">
         <div class="title-area">
             <h1 class="heading03">らくらく弁当ができるまで</h1>
         </div>
-        <div class="inner-line">
+        <div class="box">
             <ContentsContent1 />
             <ContentsContent2 />
             <ContentsContent3 />
@@ -13,19 +11,16 @@ import type content1Vue from './Contents/content1.vue';
     </div>
 </template>
 
-<style>
+<script setup lang="ts">
+
+</script>
+
+<style scoped>
 .contents-area {
     width: 100%;
-    background-color: #FFF496;
+    background-image: url(@/assets/images/background.jpg);
     padding-top: 10vh;
 }
-
-/* .inner-line {
-    width: 80%;
-    border: solid 3px rgb(60, 60, 60);
-    margin: 0 auto;
-    border-radius: 20px;
-} */
 
 .title-area {
     width: 100%;
@@ -34,27 +29,41 @@ import type content1Vue from './Contents/content1.vue';
 
 .title-area h1 {
     text-align: center;
-    font-family: 'Intro';
+    font-family: 'Zen Old Mincho';
     font-size: 40px;
-    color: rgb(60, 60, 60);
+    color: rgb(0, 0, 0);
 }
 
-.inner-line {
-    padding: 1em 1.5em;
-    margin: 2em 0;
-    background-color: #ffffe0;
-    /*背景色*/
-    border: dotted 6px #ffa500;
-    /*線*/
-    color: #000000;
-    /*文字色*/
-    width: 80%;
+.box {
+    border-top: 2px solid #aaa;
+    border-bottom: 2px solid #aaa;
+    padding: 3em 0;
+    position: relative;
     margin: 0 auto;
+    width: 80%;
 }
 
-.inner-line p {
-    margin: 0;
-    padding: 0;
+.box:before,
+.box:after {
+    content: '';
+    position: absolute;
+    top: -10px;
+    width: 2px;
+    height: -webkit-calc(100% + 20px);
+    height: calc(100% + 20px);
+    background-color: #aaa;
+}
+
+.box:before {
+    left: 10px;
+}
+
+.box:after {
+    right: 10px;
+}
+
+.box p {
+    padding-left: 50px;
 }
 
 .heading03 {
@@ -70,7 +79,7 @@ import type content1Vue from './Contents/content1.vue';
     content: '';
     width: 70px;
     height: 3px;
-    background-color: #e3bf00;
+    background-color: rgb(60, 60, 60);
 }
 
 .heading03::before {

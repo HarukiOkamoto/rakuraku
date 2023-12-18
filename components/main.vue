@@ -4,17 +4,23 @@
             <img src="@/assets/images/mainImg.png" alt="" class="fade-in-image" style="--delay: 0s;">
         </div>
         <div class="main-title">
-            <h1 class="secound">
-                <span v-for="(char, index) in 'たくさんの人に。'.split('')" :key="index" class="fade-in-text"
-                    :style="{ '--delay': (index + 'おいしいお弁当を'.length + 5) * 0.1 + 's' }">{{ char }}</span>
-            </h1>
-            <h1 class="first">
-                <span v-for="(char, index) in 'おいしいお弁当を'.split('')" :key="index" class="fade-in-text"
-                    :style="{ '--delay': (index + 5) * 0.1 + 's' }">{{ char }}</span>
+            <h1>
+                <span v-for="(char, index) in text" :key="index" :style="{ '--delay': `${index * 0.1}s` }"
+                    class="fade-in-text">{{ char }}</span>
             </h1>
         </div>
     </div>
 </template>
+
+<script>
+export default {
+    data() {
+        return {
+            text: 'おいしいお弁当をたくさんの人に。'.split('')
+        }
+    }
+}
+</script>
 
 <style scoped>
 .main-contens {
@@ -30,13 +36,14 @@
 .img-area img {
     opacity: 0.6;
     position: relative;
+    border-radius: 0 0 50% 50%;
 }
 
 .main-title {
     position: absolute;
-    top: 55%;
+    top: 50%;
     left: 50%;
-    transform: translate(-50%, -60%);
+    transform: translate(-50%, -50%);
     width: 100%;
     text-align: center;
 }
@@ -47,13 +54,10 @@
     font-size: 60px;
     /* Increase font size */
     font-weight: 900;
-    /* Make text bold */
-    color: #000000;
-    /* Change text color to dark gray */
-    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.7);
     /* Add white text shadow */
     font-family: 'Zen Old Mincho';
     /* Set font to Mincho */
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
 }
 
 .fade-in-image {

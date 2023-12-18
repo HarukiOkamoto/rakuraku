@@ -1,19 +1,16 @@
 <template>
     <div class="intro-content">
         <div class="sub-title">
-            <h2 class="index">3.</h2>
-            <h2>皆さんの<span>もと</span>へ!!</h2>
+            <h2 class="index">三.</h2>
+            <h2>皆さんの<span>もと</span>へお届け</h2>
         </div>
         <div class="content-area">
             <div class="intro-text">
-                <p>テストテストテストテスト</p>
-                <p>テストテストテストテストテスト</p>
-                <p>テストテストテストテストテストテストテストテストテストテストテストテストテスト
-                    テストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテスト
-                </p>
+                <p>完成したお弁当は、地域の皆さんのもとへ配達されます。</p>
+                <p>値段は550円。月の第一火曜日は蕨市民会館、第三火曜日は蕨市役所にて出張販売もしています。お気軽にお声掛けください!</p>
             </div>
             <div class="intro-img">
-                <img src="@/assets/images/content1.png" alt="">
+                <img src="@/assets/images/content3.png" alt="">
             </div>
         </div>
     </div>
@@ -26,7 +23,6 @@
     border-radius: 20px;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
     margin: 15vh auto;
-
 }
 
 .sub-title {
@@ -36,6 +32,8 @@
 
 .sub-title h2 {
     font-size: 30px;
+    font-family: 'Zen Old Mincho';
+    font-weight: bold;
 }
 
 .sub-title span {
@@ -56,12 +54,12 @@
 }
 
 .intro-text {
-    font-family: 'Noto Sans JP';
-    width: 50%;
+    font-family: 'Zen Old Mincho';
+    width: 60%;
 }
 
 .intro-text p {
-    font-size: 16px;
+    font-size: 20px;
     padding-left: 3vh
 }
 
