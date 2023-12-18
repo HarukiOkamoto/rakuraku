@@ -9,6 +9,9 @@ export default defineNuxtConfig({
       charset: 'utf-8',
       viewport: 'width=device-width, initial-scale=1',
       title: 'らくらく弁当',
+      meta: [
+        { hid: 'color-scheme', name: 'color-scheme', content: 'light' },
+      ],
       link: [
         {
           rel: 'stylesheet',

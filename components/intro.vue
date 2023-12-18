@@ -83,7 +83,7 @@ onMounted(() => {
 }
 
 .intro-textarea {
-    width: 1000px;
+    width: 50%;
     padding-top: 10vh;
     margin: 0 auto;
 }
