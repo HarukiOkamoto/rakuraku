@@ -48,8 +48,8 @@ onMounted(() => {
     width: 100%;
     background-color: #fff;
     margin: 0 auto;
-    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
     padding-top: 10vh;
+    padding-bottom: 10vh;
 }
 
 .intro-title {
@@ -63,7 +63,6 @@ onMounted(() => {
     font-family: 'Zen Old Mincho';
     font-weight: bold;
     color: rgb(60, 60, 60);
-    ;
 }
 
 .intro-movie {
@@ -85,7 +84,7 @@ onMounted(() => {
 
 .intro-textarea {
     width: 1000px;
-    padding: 10vh;
+    padding-top: 10vh;
     margin: 0 auto;
 }
 

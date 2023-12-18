@@ -18,8 +18,8 @@
 
 <style scoped>
 .main-contens {
-    position: relative;
     width: 100%;
+    padding-top: 50px;
 }
 
 .img-area {
@@ -29,13 +29,14 @@
 
 .img-area img {
     opacity: 0.6;
+    position: relative;
 }
 
 .main-title {
     position: absolute;
-    top: 50%;
+    top: 55%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -60%);
     width: 100%;
     text-align: center;
 }

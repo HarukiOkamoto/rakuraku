@@ -1,6 +1,7 @@
 <template>
-    <MainContents />
+    <Main />
     <Intro />
+    <Contents />
 </template>
 
 
