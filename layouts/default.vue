@@ -52,8 +52,8 @@
     padding-top: 15px;
     background-color: #f3f3f2;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
-    position: fixed;
     z-index: 1000;
+    position: fixed;
 }
 
 .nav {
@@ -105,5 +105,6 @@ svg {
 
 .active-link {
     border-bottom: 3px solid #FB710E;
+    color: #FB710E;
 }
 </style>
