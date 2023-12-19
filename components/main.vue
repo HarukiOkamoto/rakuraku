@@ -37,7 +37,7 @@ export default {
 <style scoped>
 .Higakigara {
     width: 100%;
-    height: 700px;
+    height: 800px;
     background:
         linear-gradient(135deg, #fddea5 21px, #fff 22px, #fff 24px, transparent 24px, transparent 67px, #fff 67px, #d9ecff 69px, transparent 69px),
         linear-gradient(225deg, #fddea5 21px, #fff 22px, #fff 24px, transparent 24px, transparent 67px, #fff 67px, #fff 69px, transparent 69px)0 64px;
@@ -52,14 +52,14 @@ export default {
     width: 300px;
     height: auto;
     position: absolute;
-    top: 500px;
+    top: 550px;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 1;
     padding-top: 100px;
     opacity: 0;
     animation: fade-in 2s ease forwards;
-    animation-delay: 1s;
+    animation-delay: 3s;
 }
 
 .main-contens {
@@ -68,7 +68,7 @@ export default {
 
 .main-title {
     position: absolute;
-    top: 280px;
+    top: 300px;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 100%;
@@ -78,7 +78,7 @@ export default {
 .main-title h1 {
     writing-mode: vertical-rl;
     display: inline-block;
-    font-size: 40px;
+    font-size: 45px;
     /* Increase font size */
     font-weight: 900;
     /* Add white text shadow */
