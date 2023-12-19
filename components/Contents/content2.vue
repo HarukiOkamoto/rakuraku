@@ -20,14 +20,14 @@ onMounted(() => {
 <template>
     <div class="content2" :class="{ 'fade-in': isVisible }">
         <div class="sub-title">
-            <h2 class="index fade-in" style="--delay: 5s;">二.</h2>
-            <h2 class="fade-in" style="--delay: 5s;"><span>調</span>理</h2>
+            <h2 class="index fade-in">二.</h2>
+            <h2><span>調</span>理</h2>
         </div>
         <div class="content-area">
-            <div class="content-img fade-in" style="--delay: 6s;">
+            <div class="content-img">
                 <img src="@/assets/images/content2.png" alt="">
             </div>
-            <div class="content-text fade-in" style="--delay: 7s;">
+            <div class="content-text">
                 <p>調理班の調理風景です。</p>
                 <p>わからないことや難しいことは社員さんに教えてもらいながらみんなで一緒に、ひとつひとつに心を込めてお弁当を作ります。</p>
                 <p>これがとっても優しい味の秘訣です。</p>

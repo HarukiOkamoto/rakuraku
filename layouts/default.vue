@@ -50,7 +50,7 @@
 .header-area {
     width: 100%;
     padding-top: 15px;
-    background-color: #FFF;
+    background-color: #f3f3f2;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
     position: fixed;
     z-index: 1000;
@@ -67,8 +67,10 @@
 
 .nav li {
     display: flex;
+    /* 追加 */
+    align-items: center;
+    /* 追加 */
     justify-content: space-between;
-    /* 項目間のスペースを均等に分配 */
     padding: 1vh;
     margin-right: 3vh;
     margin-left: 3vh;

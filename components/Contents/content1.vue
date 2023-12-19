@@ -20,17 +20,17 @@ onMounted(() => {
 <template>
     <div class="content1" :class="{ 'fade-in': isVisible }">
         <div class="sub-title">
-            <h2 class="index fade-in" style="--delay: 2s;">一.</h2>
-            <h2 class="fade-in" style="--delay: 2s;"><span>班</span>分け</h2>
+            <h2 class="index">一.</h2>
+            <h2><span>班</span>分け</h2>
         </div>
         <div class="content-area">
-            <div class="content-text fade-in" style="--delay: 3s;">
+            <div class="content-text">
                 <p>まず、調理班と室内班で分かれます。</p>
                 <p>調理班はさらに厨房でそれぞれの役割を分担し、</p>
                 <p>室内班はお弁当や割りばしの包み紙などの制作を行います。</p>
                 <p>らくらく弁当のメニューは日変わりで、手作りの味にこだわっています。</p>
             </div>
-            <div class="content-img fade-in" style="--delay: 4s;">
+            <div class="content-img">
                 <img src="@/assets/images/content1.png" alt="">
             </div>
         </div>

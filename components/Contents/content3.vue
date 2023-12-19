@@ -19,15 +19,15 @@ onMounted(() => {
 <template>
     <div class="content3" :class="{ 'fade-in': isVisible }">
         <div class="sub-title">
-            <h2 class="index fade-in" style="--delay: 8s;">三.</h2>
-            <h2 class="fade-in" style="--delay: 8s;"><span>配</span>送</h2>
+            <h2 class="index">三.</h2>
+            <h2><span>配</span>送</h2>
         </div>
         <div class="content-area">
-            <div class="content-text fade-in" style="--delay: 8s;">
+            <div class="content-text">
                 <p>完成したお弁当は、地域の皆さんのもとへ配達されます。</p>
                 <p>値段は550円。月の第一火曜日は蕨市民会館、第三火曜日は蕨市役所にて出張販売もしています。お気軽にお声掛けください!</p>
             </div>
-            <div class="content-img fade-in" style="--delay: 9s;">
+            <div class="content-img">
                 <img src="@/assets/images/content3.png" alt="">
             </div>
         </div>

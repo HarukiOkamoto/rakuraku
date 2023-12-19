@@ -39,6 +39,7 @@ export default {
 .img-area {
     width: 100%;
     height: auto;
+    background-color: #f8f4e6;
 }
 
 .img-area img {

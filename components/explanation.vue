@@ -52,7 +52,7 @@ onMounted(() => {
 <style scoped>
 .explanation-area {
     width: 100%;
-    background-color: #fff;
+    background-color: #f8f4e6;
     margin: 0 auto;
     padding-top: 20vh;
     padding-bottom: 10vh;
@@ -86,7 +86,7 @@ onMounted(() => {
     margin: 0 auto;
     height: auto;
     transition: transform .6s ease;
-    width: 800px;
+    width: 700px;
 }
 
 .explanation-movie img:hover {
