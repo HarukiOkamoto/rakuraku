@@ -18,6 +18,14 @@ export default {
         return {
             text: 'おいしいお弁当をたくさんの人に。'.split('')
         }
+    },
+    mounted() {
+        document.body.style.overflow = 'hidden';
+        // フェードインアニメーションの時間を考慮して、
+        // ここでは1秒後にスクロールを可能にします。
+        setTimeout(() => {
+            document.body.style.overflow = '';
+        }, 2000);
     }
 }
 </script>

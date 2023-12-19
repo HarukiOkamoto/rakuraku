@@ -1,27 +1,44 @@
+<script setup lang="ts">
+const isVisible = ref(false);
+
+onMounted(() => {
+    const observer = new IntersectionObserver(
+        ([entry]) => {
+            if (!isVisible.value) {
+                isVisible.value = entry.isIntersecting;
+            }
+        },
+        {
+            threshold: 0.1,
+        }
+    );
+
+    observer.observe(document.querySelector('.content1'));
+});
+</script>
+
 <template>
-    <transition name="fade">
-        <div class="intro-content">
-            <div class="sub-title">
-                <h2 class="index">一.</h2>
-                <h2><span>班</span>分け</h2>
+    <div class="content1" :class="{ 'fade-in': isVisible }">
+        <div class="sub-title">
+            <h2 class="index fade-in" style="--delay: 2s;">一.</h2>
+            <h2 class="fade-in" style="--delay: 2s;"><span>班</span>分け</h2>
+        </div>
+        <div class="content-area">
+            <div class="content-text fade-in" style="--delay: 3s;">
+                <p>まず、調理班と室内班で分かれます。</p>
+                <p>調理班はさらに厨房でそれぞれの役割を分担し、</p>
+                <p>室内班はお弁当や割りばしの包み紙などの制作を行います。</p>
+                <p>らくらく弁当のメニューは日変わりで、手作りの味にこだわっています。</p>
             </div>
-            <div class="content-area">
-                <div class="intro-text">
-                    <p>まず、調理班と室内班で分かれます。</p>
-                    <p>調理班はさらに厨房でそれぞれの役割を分担し、</p>
-                    <p>室内班はお弁当や割りばしの包み紙などの制作を行います。</p>
-                    <p>らくらく弁当のメニューは日変わりで、手作りの味にこだわっています。</p>
-                </div>
-                <div class="intro-img">
-                    <img src="@/assets/images/content1.png" alt="">
-                </div>
+            <div class="content-img fade-in" style="--delay: 4s;">
+                <img src="@/assets/images/content1.png" alt="">
             </div>
         </div>
-    </transition>
+    </div>
 </template>
 
 <style scoped>
-.intro-content {
+.content1 {
     width: 70%;
     background-color: white;
     border-radius: 20px;
@@ -57,38 +74,37 @@
     padding-bottom: 2vh;
 }
 
-.intro-text {
+.content-text {
     font-family: 'Zen Old Mincho';
     width: 60%;
 }
 
-.intro-text p {
+.content-text p {
     font-size: 20px;
     padding-left: 3vh
 }
 
-.intro-img {
+.content-img {
     width: 50%;
     padding: 1vh;
     margin-left: auto;
 }
 
-.intro-img img {
+.content-img img {
     width: 300px;
     height: auto;
     margin: 0 auto;
 }
-</style>
 
-<style>
-/* フェードインアニメーションのスタイル */
-.fade-enter-active,
-.fade-leave-active {
-    transition: opacity .5s;
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+    animation-delay: var(--delay);
 }
 
-.fade-enter,
-.fade-leave-to {
-    opacity: 0;
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
 }
 </style>

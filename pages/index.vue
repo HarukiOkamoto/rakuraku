@@ -1,7 +1,9 @@
 <template>
     <Main />
-    <Intro />
+    <Explanation />
     <Contents />
+    <Button />
+    <Fotter />
 </template>
 
 <style>

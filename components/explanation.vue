@@ -13,27 +13,29 @@ const closeModal = () => {
 onMounted(() => {
     const observer = new IntersectionObserver(
         ([entry]) => {
-            isVisible.value = entry.isIntersecting;
+            if (!isVisible.value) {
+                isVisible.value = entry.isIntersecting;
+            }
         },
         {
-            threshold: 0.1, // adjust this value to control when the observer triggers
+            threshold: 0.1,
         }
     );
 
-    observer.observe(document.querySelector('.intro-area'));
+    observer.observe(document.querySelector('.explanation-area'));
 });
 </script>
 
 <template>
-    <div class="intro-area" :class="{ 'fade-in': isVisible }">
-        <div class="intro-title fade-in" style="--delay: 0s;">
+    <div class="explanation-area" :class="{ 'fade-in': isVisible }">
+        <div class="explanation-title fade-in" style="--delay: 0s;">
             <h1>地域に愛される、らくらく<span>弁当</span>。</h1>
         </div>
-        <div class="intro-movie fade-in" style="--delay: 1s;">
+        <div class="explanation-movie fade-in" style="--delay: 1s;">
             <button @click="isModalOpen = true"><img src="@/assets/images/thumb.jpg" alt=""></button>
             <Modal v-if="isModalOpen" @close="closeModal"></Modal>
         </div>
-        <div class="intro-textarea fade-in" style="--delay: 2s;">
+        <div class="explanation-textarea fade-in" style="--delay: 2s;">
             <div class="text-content inner-line">
                 <p>埼玉県蕨市にある、就労継続支援B型(障がいのある方が就労訓練を行える事業所)の宅配弁当!!</p>
                 <p>すべて手作業で美味しいお弁当作りをしています。手作りの割りばし袋や、
@@ -48,7 +50,7 @@ onMounted(() => {
 </template>
 
 <style scoped>
-.intro-area {
+.explanation-area {
     width: 100%;
     background-color: #fff;
     margin: 0 auto;
@@ -60,38 +62,44 @@ onMounted(() => {
     background-size: 800px;
 }
 
-.intro-title {
+.explanation-title {
     text-align: center;
     padding-top: 10vh;
 }
 
-.intro-title h1 {
+.explanation-title h1 {
     font-size: 40px;
     font-family: 'Zen Old Mincho';
     font-weight: bold;
     color: rgb(0, 0, 0);
 }
 
-.intro-movie {
+.explanation-movie {
     text-align: center;
     position: relative;
     padding-top: 5vh;
+    width: fit-content;
+    margin: 0 auto;
 }
 
-.intro-movie img {
+.explanation-movie img {
     margin: 0 auto;
-    max-width: 60%;
     height: auto;
     transition: transform .6s ease;
-
+    width: 800px;
 }
 
-.intro-movie img:hover {
+.explanation-movie img:hover {
     transform: scale(1.1);
 }
 
-.intro-textarea {
-    max-width: 60%;
+.explanation-movie button {
+    top: 0;
+    left: 0;
+}
+
+.explanation-textarea {
+    max-width: 50%;
     margin: 0 auto;
     padding-top: 50px;
 }
@@ -127,18 +135,15 @@ span {
 .inner-line {
     padding: 1em 1.5em;
     margin: 2em 0;
-    background-color: #ffffe0;
-    /*背景色*/
-    border: dotted 6px #ffa500;
+    border: double 4px #4a4a4a;
+    background-color: #fff;
     /*線*/
-    color: #000000;
-    /*文字色*/
-    width: 80%;
-    margin: 0 auto;
 }
 
 .inner-line p {
     margin: 0;
     padding: 0;
+    font-family: 'Zen Old Mincho';
+    font-weight: bold;
 }
 </style>
