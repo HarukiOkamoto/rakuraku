@@ -18,18 +18,21 @@
     </div>
 </template>
 
-<script>
+<script lang="ts">
 export default {
-    data() {
+    setup() {
+        const text = ref(['おいしいお弁当を', 'たくさんの人に。'].map(line => line.split('')));
+
+        onMounted(() => {
+            document.body.style.overflow = 'hidden';
+            setTimeout(() => {
+                document.body.style.overflow = '';
+            }, 2000 + 1000 + 1300 + text.value.flat().length * 0.1 * 1000);
+        });
+
         return {
-            text: ['おいしいお弁当を', 'たくさんの人に。'].map(line => line.split(''))
-        }
-    },
-    mounted() {
-        document.body.style.overflow = 'hidden';
-        setTimeout(() => {
-            document.body.style.overflow = '';
-        }, 2000 + 1000 + 2000 + this.text.flat().length * 0.1);
+            text
+        };
     }
 }
 </script>
@@ -130,7 +133,7 @@ export default {
 
 .fade-in-text {
     opacity: 0;
-    animation: fadeInText 5s ease forwards;
+    animation: fadeInText 2s ease forwards;
     animation-delay: var(--delay);
 }
 
