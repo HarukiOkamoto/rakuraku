@@ -18,7 +18,7 @@ onMounted(() => {
             }
         },
         {
-            threshold: 0.1,
+            threshold: 1,
         }
     );
 
@@ -28,23 +28,23 @@ onMounted(() => {
 
 <template>
     <div class="explanation-area" :class="{ 'fade-in': isVisible }">
-        <div class="explanation-title">
-            <h1>地域に愛される、らくらく<span>弁当</span>。</h1>
-        </div>
-        <div class="explanation-movie">
-            <button @click="isModalOpen = true"><img src="@/assets/images/thumb.jpg" alt=""></button>
-            <Modal v-if="isModalOpen" @close="closeModal"></Modal>
-        </div>
-        <div class="explanation-textarea">
-            <div class=" text-content">
-                <p>埼玉県蕨市にある、就労継続支援B型(障がいのある方が就労訓練を行える事業所)の宅配弁当!!</p>
-                <p>すべて手作業で美味しいお弁当作りをしています。手作りの割りばし袋や、
-                    かわいらしいお弁当包みで地域の皆さんに愛されています。</p>
-                <br><br>
+        <div class="explanation-text">
+            <h1>地域に愛される、宅配<span>弁当</span>。</h1>
+            <div class="text-area">
+                <p>埼玉県蕨市にある、就労継続支援B型(障がいのある方が就労訓練を行える事業所)の宅配弁当。</p>
+                <p>すべて手作業で美味しいお弁当作りをしています。</p>
+                <p>手作りの割りばし袋や、 かわいらしいお弁当包みで地域の皆さんにご愛顧を賜っております。</p>
+                <br>
                 <p>地域の密着取材
-                    <a href=" https://www.youtube.com/@catvwink" target="_blank">(蕨市ケーブルテレビウインクチャンネル)</a>が取材に来てくれました！
+                    <a href=" https://www.youtube.com/@catvwink" target="_blank">(蕨市ケーブルテレビウインクチャンネル)</a>の取材を受けさせて頂きました。
                 </p>
             </div>
+        </div>
+        <div class="explanation-movie">
+            <button @click="isModalOpen = true">
+                <img src="@/assets/images/icon.svg" alt="">
+            </button>
+            <Modal v-if="isModalOpen" @close="closeModal"></Modal>
         </div>
     </div>
 </template>
@@ -52,94 +52,53 @@ onMounted(() => {
 <style scoped>
 .explanation-area {
     width: 100%;
+    height: 800px;
     background-color: #f8f4e6;
     margin: 0 auto;
-    padding-top: 20vh;
-    padding-bottom: 10vh;
-}
-
-.explanation-title {
-    text-align: center;
-    padding-top: 10vh;
-}
-
-.explanation-title h1 {
-    font-size: 40px;
-    font-family: 'Zen Old Mincho';
-    font-weight: bold;
-    color: rgb(0, 0, 0);
-}
-
-.explanation-movie {
-    text-align: center;
+    writing-mode: vertical-rl;
+    padding: 30px;
     position: relative;
-    padding-top: 5vh;
-    width: fit-content;
-    margin: 0 auto;
 }
 
-.explanation-movie img {
-    margin: 0 auto;
-    height: auto;
-    transition: transform .6s ease;
-    width: 700px;
+.explanation-area h1 {
+    font-family: Zen Old Mincho;
+    padding-right: 150px;
 }
 
-.explanation-movie img:hover {
-    transform: scale(1.1);
-}
-
-.explanation-movie button {
-    top: 0;
-    left: 0;
-}
-
-.explanation-textarea {
-    max-width: 50%;
-    margin: 0 auto;
-    padding-top: 50px;
-}
-
-.text-content {
-    text-align: left;
-}
-
-.text-content p {
-    font-size: 20px;
-    color: rgb(0, 0, 0);
-    font-family: "Noto Sans JP";
-    font-weight: 600;
-}
-
-span {
+.explanation-area span {
     color: #FB710E;
 }
 
-
-.fade-in {
-    opacity: 0;
-    animation: fadeIn 1s ease forwards;
-    animation-delay: var(--delay);
+.text-area {
+    width: auto;
+    height: 600px;
+    padding-left: 30px;
+    padding-right: 50px;
 }
 
-@keyframes fadeIn {
-    to {
+.text-area p {
+    font-family: 'Zen Old Mincho';
+    font-size: 18px;
+    padding: 1px;
+}
+
+.explanation-movie {
+    position: absolute;
+    top: 50%;
+    left: 400px;
+}
+
+.explanation-movie img {
+    width: 100px;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
         opacity: 1;
     }
-}
-
-.inner-line {
-    padding: 1em 1.5em;
-    margin: 2em 0;
-    border: double 4px #4a4a4a;
-    background-color: #fff;
-    /*線*/
-}
-
-.inner-line p {
-    margin: 0;
-    padding: 0;
-    font-family: 'Zen Old Mincho';
-    font-weight: bold;
 }
 </style>

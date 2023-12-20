@@ -98,6 +98,7 @@ export default {
     writing-mode: vertical-rl;
     opacity: 0;
     animation: fade-in 2s ease forwards;
+    z-index: 1000;
 }
 
 .company h3 {
