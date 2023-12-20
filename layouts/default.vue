@@ -24,8 +24,6 @@
 
 <style scoped>
 .header-area {
-
-    padding-top: 15px;
     z-index: 1000;
     position: fixed;
     opacity: 0.8;

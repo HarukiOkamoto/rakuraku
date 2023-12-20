@@ -42,7 +42,7 @@ export default {
     width: 100%;
     height: 800px;
     background:
-        linear-gradient(135deg, #fddea5 21px, #fff 22px, #fff 24px, transparent 24px, transparent 67px, #fff 67px, #d9ecff 69px, transparent 69px),
+        linear-gradient(135deg, #fddea5 21px, #fff 22px, #fff 24px, transparent 24px, transparent 67px, #fff 67px, #ffffff 69px, transparent 69px),
         linear-gradient(225deg, #fddea5 21px, #fff 22px, #fff 24px, transparent 24px, transparent 67px, #fff 67px, #fff 69px, transparent 69px)0 64px;
     background-color: #fddea5;
     background-size: 64px 128px;
@@ -92,7 +92,7 @@ export default {
 .company {
     position: absolute;
     position: fixed;
-    top: 0px;
+    top: 20px;
     right: 50px;
     text-align: right;
     writing-mode: vertical-rl;

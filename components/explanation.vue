@@ -28,21 +28,21 @@ onMounted(() => {
 
 <template>
     <div class="explanation-area" :class="{ 'fade-in': isVisible }">
-        <div class="explanation-title fade-in" style="--delay: 0s;">
+        <div class="explanation-title">
             <h1>地域に愛される、らくらく<span>弁当</span>。</h1>
         </div>
-        <div class="explanation-movie fade-in" style="--delay: 1s;">
+        <div class="explanation-movie">
             <button @click="isModalOpen = true"><img src="@/assets/images/thumb.jpg" alt=""></button>
             <Modal v-if="isModalOpen" @close="closeModal"></Modal>
         </div>
-        <div class="explanation-textarea fade-in" style="--delay: 2s;">
-            <div class="text-content inner-line">
+        <div class="explanation-textarea">
+            <div class=" text-content">
                 <p>埼玉県蕨市にある、就労継続支援B型(障がいのある方が就労訓練を行える事業所)の宅配弁当!!</p>
                 <p>すべて手作業で美味しいお弁当作りをしています。手作りの割りばし袋や、
                     かわいらしいお弁当包みで地域の皆さんに愛されています。</p>
                 <br><br>
                 <p>地域の密着取材
-                    <a href="https://www.youtube.com/@catvwink" target="_blank">(蕨市ケーブルテレビウインクチャンネル)</a>が取材に来てくれました！
+                    <a href=" https://www.youtube.com/@catvwink" target="_blank">(蕨市ケーブルテレビウインクチャンネル)</a>が取材に来てくれました！
                 </p>
             </div>
         </div>
