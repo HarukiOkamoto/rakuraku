@@ -18,7 +18,7 @@ onMounted(() => {
             }
         },
         {
-            threshold: 1,
+            threshold: 0.3,
         }
     );
 
@@ -29,21 +29,22 @@ onMounted(() => {
 <template>
     <div class="explanation-area" :class="{ 'fade-in': isVisible }">
         <div class="explanation-text">
-            <h1>地域に愛される、宅配<span>弁当</span>。</h1>
+            <h1 :class="{ 'fade-in': isVisible }" style="--delay: 0s;">地域に愛される、宅配<span>弁当</span>。</h1>
             <div class="text-area">
-                <p>埼玉県蕨市にある、就労継続支援B型(障がいのある方が就労訓練を行える事業所)の宅配弁当。</p>
-                <p>すべて手作業で美味しいお弁当作りをしています。</p>
-                <p>手作りの割りばし袋や、 かわいらしいお弁当包みで地域の皆さんにご愛顧を賜っております。</p>
+                <p :class="{ 'fade-in': isVisible }" style="--delay: 1s;">埼玉県蕨市にある、就労継続支援B型(障がいのある方が就労訓練を行える事業所)の宅配弁当。</p>
+                <p :class="{ 'fade-in': isVisible }" style="--delay: 2s;">すべて手作業で美味しいお弁当作りをしています。</p>
+                <p :class="{ 'fade-in': isVisible }" style="--delay: 3s;">手作りの割りばし袋や、 かわいらしいお弁当包みで地域の皆さんにご愛顧を賜っております。</p>
                 <br>
-                <p>地域の密着取材
+                <p :class="{ 'fade-in': isVisible }" style="--delay: 4s;">地域の密着取材
                     <a href=" https://www.youtube.com/@catvwink" target="_blank">(蕨市ケーブルテレビウインクチャンネル)</a>の取材を受けさせて頂きました。
                 </p>
+
             </div>
         </div>
         <div class="explanation-movie">
             <button @click="isModalOpen = true">
-                <p>↓画像をクリックで再生</p>
-                <img src="@/assets/images/mainImg.png" alt="">
+                <p :class="{ 'fade-in': isVisible }" style="--delay: 5s;">↓画像をクリックで再生</p>
+                <img src="@/assets/images/mainImg.png" alt="" :class="{ 'fade-in': isVisible }" style="--delay: 5s;">
             </button>
             <Modal v-if="isModalOpen" @close="closeModal"></Modal>
         </div>
@@ -59,6 +60,7 @@ onMounted(() => {
     writing-mode: vertical-rl;
     padding: 30px;
     position: relative;
+    opacity: 0;
 }
 
 .explanation-area h1 {
@@ -104,6 +106,12 @@ onMounted(() => {
 
 .explanation-movie img:hover {
     transform: scale(1.05);
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fade-in 2s ease forwards;
+    animation-delay: var(--delay);
 }
 
 @keyframes fade-in {
