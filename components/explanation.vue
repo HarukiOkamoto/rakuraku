@@ -42,7 +42,8 @@ onMounted(() => {
         </div>
         <div class="explanation-movie">
             <button @click="isModalOpen = true">
-                <img src="@/assets/images/icon.svg" alt="">
+                <p>↓画像をクリックで再生</p>
+                <img src="@/assets/images/mainImg.png" alt="">
             </button>
             <Modal v-if="isModalOpen" @close="closeModal"></Modal>
         </div>
@@ -63,6 +64,7 @@ onMounted(() => {
 .explanation-area h1 {
     font-family: Zen Old Mincho;
     padding-right: 150px;
+    padding-top: 30px;
 }
 
 .explanation-area span {
@@ -72,9 +74,9 @@ onMounted(() => {
 .text-area {
     width: auto;
     height: 600px;
-    padding-left: 30px;
-    padding-right: 50px;
+    padding: 30px;
 }
+
 
 .text-area p {
     font-family: 'Zen Old Mincho';
@@ -83,13 +85,25 @@ onMounted(() => {
 }
 
 .explanation-movie {
-    position: absolute;
-    top: 50%;
-    left: 400px;
+    position: relative;
+    width: 100%;
+}
+
+.explanation-movie p {
+    padding-top: 100px;
 }
 
 .explanation-movie img {
-    width: 100px;
+    position: absolute;
+    top: 100px;
+    width: 600px;
+    transition: transform 0.5s ease-in-out;
+    border: solid 1px #FB710E;
+    margin-right: 25px;
+}
+
+.explanation-movie img:hover {
+    transform: scale(1.05);
 }
 
 @keyframes fade-in {

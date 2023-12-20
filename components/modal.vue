@@ -9,8 +9,9 @@ const close = () => {
     <div class="modalContainer" @click.self="close">
         <div class="modalBody">
             <div class="modalContent">
-                <iframe width="799" height="450" src="https://www.youtube.com/embed/6szqRF7RIlg?si=GQoraHIkAhB1-0UE&amp;&autoplay=1&
-                    mute=1&amp;start=387&end=476" title="YouTube video player" frameborder="5"
+                <iframe width="799" height="450"
+                    src="https://www.youtube.com/embed/6szqRF7RIlg?si=GQoraHIkAhB1-0UE&autoplay=1&mute=1&start=387"
+                    title="YouTube video player" frameborder="3"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowfullscreen></iframe>
             </div>
