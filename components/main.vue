@@ -91,7 +91,8 @@ export default {
 
 .company {
     position: absolute;
-    top: 100px;
+    position: fixed;
+    top: 0px;
     right: 50px;
     text-align: right;
     writing-mode: vertical-rl;
@@ -106,7 +107,6 @@ export default {
     font-family: 'Noto Serif JP',
         serif !important;
     font-weight: bold;
-    margin: 1em auto;
     font-size: 25px;
 }
 

@@ -56,10 +56,6 @@ onMounted(() => {
     margin: 0 auto;
     padding-top: 20vh;
     padding-bottom: 10vh;
-    background-image: url(@/assets/images/heart.svg);
-    background-repeat: no-repeat;
-    background-position: 50% 30%;
-    background-size: 800px;
 }
 
 .explanation-title {
