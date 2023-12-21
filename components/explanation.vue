@@ -23,7 +23,8 @@ onMounted(() => {
             }
         },
         {
-            threshold: 0.96,
+            root: document.body, // この行を追加
+            threshold: 0.9,
         }
     );
 
@@ -35,7 +36,7 @@ watch(isVisible, (newVal) => {
         setTimeout(() => {
             // フェードインが完了したらスクロールを再度有効にする
             document.body.style.overflow = '';
-        }, 7000); // フェードインの遅延時間に合わせて調整
+        }, 1000); // フェードインの遅延時間に合わせて調整
     }
 });
 </script>
