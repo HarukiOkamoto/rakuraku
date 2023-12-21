@@ -161,13 +161,19 @@ watch(isVisible, (newVal) => {
 
     .explanation-area h1 {
         font-family: Zen Old Mincho;
-        padding-right: 20px;
+        padding-right: 40px;
         padding-top: 50px;
         font-size: 25px;
     }
 
     .explanation-movie {
         display: none;
+    }
+
+
+
+    .text-area {
+        padding: 30px;
     }
 
 }

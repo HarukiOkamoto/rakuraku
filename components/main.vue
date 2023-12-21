@@ -12,10 +12,6 @@
                 </span>
             </h1>
         </div>
-        <div class="company fade-in">
-            <h3>らくらく弁当</h3>
-            <h5><a href="tel:048-143-8815">〇四八ー四三一ー八八一五</a></h5>
-        </div>
     </div>
 </template>
 
@@ -76,47 +72,6 @@ export default {
     /* Set font to Mincho */
 }
 
-.company {
-    position: absolute;
-    position: fixed;
-    top: 20px;
-    right: 50px;
-    text-align: right;
-    writing-mode: vertical-rl;
-    opacity: 0;
-    animation: fade-in 2s ease forwards;
-    z-index: 2;
-}
-
-.company h3 {
-    -webkit-writing-mode: vertical-rl;
-    -ms-writing-mode: tb-rl;
-    writing-mode: vertical-rl;
-    font-family: 'Noto Serif JP',
-        serif !important;
-    font-weight: bold;
-    font-size: 25px;
-}
-
-.company h3:before {
-    content: ' ';
-    display: inline-block;
-    width: 50px;
-    height: 50px;
-    background-image: radial-gradient(#E7556A 25%, transparent 0),
-        radial-gradient(#E7556A 25%, transparent 0),
-        radial-gradient(#E7556A 25%, transparent 0),
-        radial-gradient(#E7556A 25%, transparent 0),
-        radial-gradient(#E7556A 25%, transparent 0);
-    background-position: 50% 0, 5% 40%, 95% 40%, 23% 95%, 78% 95%;
-    background-size: 30px 30px;
-    background-repeat: no-repeat;
-}
-
-.company h5 {
-    font-family: 'Zen Old Mincho';
-}
-
 .obentou {
     width: 300px;
     height: auto;
@@ -173,14 +128,6 @@ export default {
 
     .main-title h1 {
         font-size: 30px;
-    }
-
-    .company {
-        display: none;
-    }
-
-    .company h3 {
-        font-size: 20px;
     }
 
     .obentou {
