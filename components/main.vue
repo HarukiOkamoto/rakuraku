@@ -51,20 +51,6 @@ export default {
     animation: fade-in 2s ease forwards;
 }
 
-.obentou {
-    width: 300px;
-    height: auto;
-    position: absolute;
-    top: 550px;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
-    padding-top: 100px;
-    opacity: 0;
-    animation: fade-in 2s ease forwards;
-    animation-delay: 3s;
-}
-
 .main-contens {
     width: 100%;
 }
@@ -98,7 +84,7 @@ export default {
     writing-mode: vertical-rl;
     opacity: 0;
     animation: fade-in 2s ease forwards;
-    z-index: 1000;
+    z-index: 2;
 }
 
 .company h3 {
@@ -124,6 +110,20 @@ export default {
     background-position: 50% 0, 5% 40%, 95% 40%, 23% 95%, 78% 95%;
     background-size: 30px 30px;
     background-repeat: no-repeat;
+}
+
+.obentou {
+    width: 300px;
+    height: auto;
+    position: absolute;
+    top: 550px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    padding-top: 100px;
+    opacity: 0;
+    animation: fade-in 2s ease forwards;
+    animation-delay: 3s;
 }
 
 .fade-in {
@@ -155,6 +155,36 @@ export default {
 
     100% {
         opacity: 1;
+    }
+}
+
+@media (max-width: 767px) {
+
+    /* スマートフォン向けのスタイル */
+    .main-title {
+        top: 200px;
+        left: 50%;
+    }
+
+    .main-title h1 {
+        font-size: 30px;
+    }
+
+    .company {
+        display: none;
+    }
+
+    .company h3 {
+        font-size: 20px;
+    }
+
+    .obentou {
+        top: 350px;
+        width: 200px;
+    }
+
+    .Higakigara {
+        height: 600px;
     }
 }
 </style>
