@@ -24,7 +24,7 @@ onMounted(() => {
         },
         {
             root: document.body, // この行を追加
-            threshold: 0.9,
+            threshold: 0.95,
         }
     );
 
