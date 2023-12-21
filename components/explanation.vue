@@ -16,28 +16,14 @@ onMounted(() => {
         ([entry]) => {
             if (!isVisible.value) {
                 isVisible.value = entry.isIntersecting;
-                if (isVisible.value) {
-                    // スクロールを無効にする
-                    document.body.style.overflow = 'hidden';
-                }
             }
         },
-        {
-            root: document.body, // この行を追加
-            threshold: 0.95,
+        { // この行を追加
+            threshold: 0.5,
         }
     );
 
     observer.observe(document.querySelector('.explanation-area'));
-});
-
-watch(isVisible, (newVal) => {
-    if (newVal) {
-        setTimeout(() => {
-            // フェードインが完了したらスクロールを再度有効にする
-            document.body.style.overflow = '';
-        }, 6000); // フェードインの遅延時間に合わせて調整
-    }
 });
 </script>
 
