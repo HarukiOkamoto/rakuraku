@@ -108,4 +108,24 @@
         opacity: 1;
     }
 }
+
+@media (max-width: 767px) {
+    .img-area {
+        width: 70%;
+        margin: 0 auto;
+    }
+
+    .introduction p {
+        font-size: 12px;
+    }
+
+    .content {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .content p {
+        font-size: 15px;
+    }
+}
 </style>
