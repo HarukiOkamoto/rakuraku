@@ -1,6 +1,7 @@
 <script setup lang="ts">
 const isModalOpen = ref(false);
 const isVisible = ref(false);
+const isScrollDisabled = ref(true);
 
 const openModal = () => {
     isModalOpen.value = true;
@@ -15,14 +16,27 @@ onMounted(() => {
         ([entry]) => {
             if (!isVisible.value) {
                 isVisible.value = entry.isIntersecting;
+                if (isVisible.value) {
+                    // スクロールを無効にする
+                    document.body.style.overflow = 'hidden';
+                }
             }
         },
         {
-            threshold: 0.3,
+            threshold: 0.96,
         }
     );
 
     observer.observe(document.querySelector('.explanation-area'));
+});
+
+watch(isVisible, (newVal) => {
+    if (newVal) {
+        setTimeout(() => {
+            // フェードインが完了したらスクロールを再度有効にする
+            document.body.style.overflow = '';
+        }, 7000); // フェードインの遅延時間に合わせて調整
+    }
 });
 </script>
 
@@ -43,8 +57,12 @@ onMounted(() => {
         </div>
         <div class="explanation-movie">
             <button @click="isModalOpen = true">
-                <p :class="{ 'fade-in': isVisible }" style="--delay: 5s;">↓画像をクリックで再生</p>
-                <img src="@/assets/images/mainImg.png" alt="" :class="{ 'fade-in': isVisible }" style="--delay: 5s;">
+                <div class="main-img">
+                    <img src="@/assets/images/mainImg.png" :class="{ 'fade-in': isVisible }" style="--delay: 5s;" alt="">
+                </div>
+                <div class="icon-img">
+                    <img src="@/assets/images/icon.svg" :class="{ 'fade-in': isVisible }" style="--delay: 5s;" alt="">
+                </div>
             </button>
             <Modal v-if="isModalOpen" @close="closeModal"></Modal>
         </div>
@@ -66,7 +84,7 @@ onMounted(() => {
 .explanation-area h1 {
     font-family: Zen Old Mincho;
     padding-right: 150px;
-    padding-top: 30px;
+    padding-top: 50px;
 }
 
 .explanation-area span {
@@ -76,7 +94,7 @@ onMounted(() => {
 .text-area {
     width: auto;
     height: 600px;
-    padding: 30px;
+    padding: 50px;
 }
 
 
@@ -95,17 +113,25 @@ onMounted(() => {
     padding-top: 100px;
 }
 
-.explanation-movie img {
+.main-img img {
     position: absolute;
     top: 100px;
     width: 600px;
     transition: transform 0.5s ease-in-out;
-    border: solid 1px #FB710E;
-    margin-right: 25px;
+    margin-right: 40px;
 }
 
-.explanation-movie img:hover {
-    transform: scale(1.05);
+.icon-img {
+    width: 20px;
+    transition: transform 0.5s ease-in-out;
+    position: absolute;
+    top: 30%;
+    right: 320px;
+}
+
+
+.icon-img:hover {
+    transform: scale(1.2);
 }
 
 .fade-in {
