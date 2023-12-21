@@ -24,7 +24,7 @@ export default {
             document.body.style.overflow = 'hidden';
             setTimeout(() => {
                 document.body.style.overflow = '';
-            }, 6000 + text.value.flat().length * 0.1 * 1000);
+            }, 4500 + text.value.flat().length * 0.1 * 1000);
         });
 
         return {
