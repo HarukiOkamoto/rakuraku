@@ -50,7 +50,8 @@ watch(isVisible, (newVal) => {
                 <p :class="{ 'fade-in': isVisible }" style="--delay: 3s;">手作りの割りばし袋や、 かわいらしいお弁当包みで地域の皆さんにご愛顧を賜っております。</p>
                 <br>
                 <p :class="{ 'fade-in': isVisible }" style="--delay: 4s;">地域の密着取材
-                    <a href=" https://www.youtube.com/@catvwink" target="_blank">(蕨市ケーブルテレビウインクチャンネル)</a>の取材を受けさせて頂きました。
+                    <a href="https://www.youtube.com/watch?v=6szqRF7RIlg"
+                        target="_blank">(蕨市ケーブルテレビウインクチャンネル)</a>の取材を受けさせて頂きました。
                 </p>
 
             </div>
