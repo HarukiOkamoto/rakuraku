@@ -6,9 +6,9 @@
     <Fotter />
 </template>
 
+
 <style>
 :root {
     color-scheme: light;
 }
 </style>
-

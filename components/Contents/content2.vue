@@ -106,4 +106,23 @@ onMounted(() => {
         opacity: 1;
     }
 }
+
+@media (max-width: 767px) {
+    .content-area {
+        flex-direction: column-reverse;
+    }
+
+    .content-img {
+        margin: 0 auto;
+    }
+
+    .content-img img {
+        width: 200px;
+    }
+
+    .content-text p {
+        font-size: 14px;
+        padding: 0;
+    }
+}
 </style>

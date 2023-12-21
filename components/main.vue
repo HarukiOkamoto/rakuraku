@@ -14,6 +14,7 @@
         </div>
         <div class="company fade-in">
             <h3>らくらく弁当</h3>
+            <h5><a href="tel:048-143-8815">〇四八ー四三一ー八八一五</a></h5>
         </div>
     </div>
 </template>
@@ -110,6 +111,10 @@ export default {
     background-position: 50% 0, 5% 40%, 95% 40%, 23% 95%, 78% 95%;
     background-size: 30px 30px;
     background-repeat: no-repeat;
+}
+
+.company h5 {
+    font-family: 'Zen Old Mincho';
 }
 
 .obentou {

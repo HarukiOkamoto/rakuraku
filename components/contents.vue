@@ -90,4 +90,22 @@
 .heading::after {
     margin-left: 20px;
 }
+
+@media (max-width: 767px) {
+
+    .title-area h1 {
+        font-size: 25px;
+    }
+
+    .heading::before,
+    .heading::after {
+        width: 20px;
+    }
+
+    .box {
+        width: 90%;
+    }
+
+
+}
 </style>

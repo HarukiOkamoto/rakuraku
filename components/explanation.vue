@@ -85,6 +85,7 @@ watch(isVisible, (newVal) => {
     font-family: Zen Old Mincho;
     padding-right: 150px;
     padding-top: 50px;
+    font-size: 32px;
 }
 
 .explanation-area span {
@@ -148,5 +149,25 @@ watch(isVisible, (newVal) => {
     100% {
         opacity: 1;
     }
+}
+
+@media (max-width: 767px) {
+    .explanation-area {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .explanation-area h1 {
+        font-family: Zen Old Mincho;
+        padding-right: 20px;
+        padding-top: 50px;
+        font-size: 25px;
+    }
+
+    .explanation-movie {
+        display: none;
+    }
+
 }
 </style>
