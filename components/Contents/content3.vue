@@ -9,25 +9,26 @@ onMounted(() => {
             }
         },
         {
-            threshold: 0.5,
+            threshold: 0.2,
         }
     );
 
-    observer.observe(document.querySelector('.content3'));
+    observer.observe(document.querySelector('.content1'));
 });
 </script>
+
 <template>
-    <div class="content3" :class="{ 'fade-in': isVisible }">
-        <div class="sub-title">
+    <div class="content1" :class="{ 'fade-in': isVisible }">
+        <div class="sub-title" :class="{ 'fade-in': isVisible }" style="--delay: 7s;">
             <h2 class="index">三.</h2>
             <h2><span>配</span>送</h2>
         </div>
         <div class="content-area">
-            <div class="content-text">
+            <div class="content-text" :class="{ 'fade-in': isVisible }" style="--delay: 8s;">
                 <p>完成したお弁当は、地域の皆さんのもとへ配達されます。</p>
-                <p>値段は550円。月の第一火曜日は蕨市民会館、第三火曜日は蕨市役所にて出張販売もしています。お気軽にお声掛けください!</p>
+                <p>値段は550円。月の第一火曜日は蕨市民会館、第三火曜日は蕨市役所にて出張販売もしています。お気軽にお声掛けください。</p>
             </div>
-            <div class="content-img">
+            <div class="content-img" :class="{ 'fade-in': isVisible }" style="--delay: 9s;">
                 <img src="@/assets/images/content3.png" alt="">
             </div>
         </div>
@@ -35,23 +36,21 @@ onMounted(() => {
 </template>
 
 <style scoped>
-.content3 {
-    width: 70%;
-    background-color: white;
-    border-radius: 20px;
-    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
-    margin: 15vh auto;
+.content1 {
+    width: 80%;
+    margin: 0 auto;
+    opacity: 0;
 }
 
 .sub-title {
     padding-top: 4vh;
-    padding-left: 4vh;
 }
 
 .sub-title h2 {
     font-size: 30px;
     font-family: 'Zen Old Mincho';
     font-weight: bold;
+    border-bottom: 1px solid #ba422b;
 }
 
 .sub-title span {
@@ -73,16 +72,18 @@ onMounted(() => {
 
 .content-text {
     font-family: 'Zen Old Mincho';
-    width: 60%;
+    flex: 1;
+    /* 追加 */
 }
 
 .content-text p {
-    font-size: 20px;
+    font-size: 18px;
     padding-left: 3vh
 }
 
 .content-img {
-    width: 50%;
+    flex: 1;
+    /* 追加 */
     padding: 1vh;
     margin-left: auto;
 }

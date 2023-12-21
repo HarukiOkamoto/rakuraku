@@ -1,8 +1,9 @@
 <template>
     <div class="contents-area">
         <div class="title-area">
-            <h1 class="heading03">らくらく弁当ができるまで</h1>
+            <h1 class="heading">らくらく弁当ができるまで</h1>
         </div>
+
         <div class="box">
             <ContentsContent1 />
             <ContentsContent2 />
@@ -18,8 +19,9 @@
 <style scoped>
 .contents-area {
     width: 100%;
-    background-image: url(@/assets/images/background.jpg);
-    padding-top: 10vh;
+    background-color: #f3f3f2;
+    padding-top: 20px;
+    padding-bottom: 70px;
 }
 
 .title-area {
@@ -30,7 +32,7 @@
 .title-area h1 {
     text-align: center;
     font-family: 'Zen Old Mincho';
-    font-size: 40px;
+    font-size: 35px;
     color: rgb(0, 0, 0);
 }
 
@@ -66,27 +68,26 @@
     padding-left: 50px;
 }
 
-.heading03 {
+.heading {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 26px;
     text-align: center;
 }
 
-.heading03::before,
-.heading03::after {
+.heading::before,
+.heading::after {
     content: '';
-    width: 70px;
-    height: 3px;
+    width: 40px;
+    height: 2px;
     background-color: rgb(60, 60, 60);
 }
 
-.heading03::before {
+.heading::before {
     margin-right: 20px;
 }
 
-.heading03::after {
+.heading::after {
     margin-left: 20px;
 }
 </style>
