@@ -36,7 +36,7 @@ watch(isVisible, (newVal) => {
         setTimeout(() => {
             // フェードインが完了したらスクロールを再度有効にする
             document.body.style.overflow = '';
-        }, 1000); // フェードインの遅延時間に合わせて調整
+        }, 6000); // フェードインの遅延時間に合わせて調整
     }
 });
 </script>
